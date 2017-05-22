@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 // import Useless from './useless';
 
 require('./style.css');
+import './style.scss';
 
 class World extends React.Component {
 	render() {
