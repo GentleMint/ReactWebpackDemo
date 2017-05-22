@@ -7,3 +7,4 @@ import World from './world';
 
 ReactDOM.render(<Hello/>, document.getElementById('hello'));
 ReactDOM.render(<World/>, document.getElementById('world'));
+console.log('MainJavaScript');
