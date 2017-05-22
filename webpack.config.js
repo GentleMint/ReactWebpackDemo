@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
 	entry: './src/main.js',
@@ -19,13 +20,14 @@ module.exports = {
 			// adding new loader needs to restart both webpack and webpack-dev-server!!
 			{
 				test: /\.css$/,
-				loader: 'style-loader!css-loader'
+				loader: 'style-loader!css-loader?sourceMap!postcss'
 			},
 			{
 				test: /\.scss$/,
 				loaders:[
 				'style-loader',
 				'css-loader?sourceMap',
+				'postcss',
 				'sass-loader?sourceMap'
 				]
 			}
@@ -34,5 +36,10 @@ module.exports = {
 	  //           loaders: ['style', 'css?sourceMap', 'sass?sourceMap']
    //      	}
 		]
-	}
+	},
+    postcss: function () {
+        return [autoprefixer({
+            browsers: ['> 1%', 'last 2 versions']
+        })];
+    }
 };
