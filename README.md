@@ -1,5 +1,5 @@
 # ReactWebpackDemo
-install webpack-dev-server
+install webpack, webpack-dev-server, webpack-cli globally
 
 run npm i
 
